@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!--==================== UNICONS ====================-->
+		<link
+			rel="stylesheet"
+			href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+		/>
+
+		<!--==================== SWIPER CSS ====================-->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+		/>
+
+		<!-- Link to the file hosted on your server, -->
+		<link rel="stylesheet" href="assets/css/splide.min.css" />
+
+		<!--==================== CSS GRID ====================-->
+		<link rel="stylesheet" href="assets/css/grid.css" />
+
+		<!--==================== CSS MAIN ====================-->
+		<link rel="stylesheet" href="assets/css/style.css" />
+
+		<!--==================== CSS RESPONSIVE ====================-->
+		<link rel="stylesheet" href="assets/css/responsive.css" />
+
+
+
+	</head>
+	<body>
+		<!--==================== Gioi-thieu ====================-->
+		<div class="grid wide" id="gioi-thieu">
+			<!--==================== Header ====================-->
+			<div style="height: 500px">
+
+			</div>
+
+			<!--==================== Gioi-thieu-Area ====================-->
+
+		</div>
+
+		<!--==================== Bai-du-thi ====================-->
+		<div class="grid wide">
+			<section id="image-carousel" class="splide" aria-label="Beautiful Images">
+				<div class="splide__track">
+					 <ul class="splide__list">
+						 <li class="splide__slide">
+							 <img src="assets/images/BAI-DU-THI-1.png" alt="">
+						 </li>
+						 <li class="splide__slide">
+							<img src="assets/images/BAI-DU-THI-2.png" alt="">
+						 </li>
+						 <li class="splide__slide">
+							<img src="assets/images/BAI-DU-THI-2.png" alt="">
+						 </li>
+						 <li class="splide__slide">
+							<img src="assets/images/BAI-DU-THI-1.png" alt="">
+						</li>
+					 </ul>
+				</div>
+			 </section>
+		</div>
+
+
+		<div style="height: 500px">
+
+		</div>
+
+
+		<!--==================== FOOTER ====================-->
+		<div class="footer">
+
+		</div>
+
+		<!--==================== SWIPER JS ====================-->
+		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper(".mySwiper", {
+				slidesPerView: 2,
+				direction: "vertical",
+				spaceBetween: 30,
+				// loop: true,
+				pagination: {
+					el: ".swiper-pagination",
+					type: "fraction",
+				},
+				navigation: {
+					//  nextEl: ".swiper-button-next",
+					//  prevEl: ".swiper-button-prev",
+					nextEl: ".btn-slider-next",
+					prevEl: ".btn-slider-prev",
+				},
+			});
+		</script>
+
+		<!--==================== MAIN JS ====================-->
+		<script src="assets/js/main.js"></script>
+
+
+		<script src="assets/js/splide.min.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				console.log(window.innerWidth);
+				if(window.innerWidth <= 740) { 
+					console.log("nho")
+					var splide = new Splide("#image-carousel", {
+					direction: "ttb",
+					height: "50rem",
+					perPage : 2,
+					pagination: false
+					});
+
+					splide.mount();
+				}
+				else {
+					console.log("lon");
+					var splide = new Splide("#image-carousel", {
+					direction: "ttb",
+					height: "100rem",
+					perPage : 2,
+					pagination: false
+					});
+
+					splide.mount();
+				}
+
+			});
+			
+		</script>
+	</body>
+</html>
