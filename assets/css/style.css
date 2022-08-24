@@ -1,46 +1,46 @@
 /*==================== GOOGLE FONTS ====================*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Quicksand:wght@300;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Quicksand:wght@300;500;600&display=swap");
 
 /*==================== VARIABLES CSS ====================*/
 :root {
-    --header-height: 4rem;
-    /*===== Colors ====*/
-    --primary-color: #396dfe;
-    --text-color: #6d6a7c;
-	 --text-color-footer: #a7a5b4;
-    
-    /*========== Font and typography ==========*/
-    --body-font: 'Poppins', sans-serif;
+	--header-height: 4rem;
+	/*===== Colors ====*/
+	--primary-color: #396dfe;
+	--text-color: #6d6a7c;
+	--text-color-footer: #a7a5b4;
 
-    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
-    --big-font-size: 2rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.125rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-    --smaller-font-size: .75rem;
+	/*========== Font and typography ==========*/
+	--body-font: "Poppins", sans-serif;
 
-    /*========== Font weight ==========*/
-    --font-regular: 300;
-    --font-medium: 500;
-    --font-bold: 600;
+	/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+	--big-font-size: 2rem;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1.125rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
 
-    /*========== Margenes Bottom ==========*/
-    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
-    --mb-0-25: .25rem;
-    --mb-0-5: .5rem;
-    --mb-0-75: .75rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-2-5: 2.5rem;
-    --mb-3: 3rem;
+	/*========== Font weight ==========*/
+	--font-regular: 300;
+	--font-medium: 500;
+	--font-bold: 600;
 
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
+	/*========== Margenes Bottom ==========*/
+	/* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+	--mb-0-25: 0.25rem;
+	--mb-0-5: 0.5rem;
+	--mb-0-75: 0.75rem;
+	--mb-1: 1rem;
+	--mb-1-5: 1.5rem;
+	--mb-2: 2rem;
+	--mb-2-5: 2.5rem;
+	--mb-3: 3rem;
+
+	/*========== z index ==========*/
+	--z-tooltip: 10;
+	--z-fixed: 100;
+	--z-modal: 1000;
 }
 
 /*==================== RESET CSS ====================*/
@@ -49,7 +49,9 @@
 	padding: 0;
 }
 
-*,*:before,*:after {
+*,
+*:before,
+*:after {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
@@ -74,7 +76,10 @@ body {
 	height: 100%;
 }
 
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
 	font-weight: var(--font-bold);
 }
 
@@ -107,9 +112,6 @@ button {
 	cursor: pointer;
 }
 
-
-
-
 /*==================== SPLIDE CUSTOM ====================*/
 .splide__slide {
 	margin: 0 auto;
@@ -118,28 +120,28 @@ button {
 
 .splide__slide img {
 	height: 100%;
-	margin: 0 auto
+	margin: 0 auto;
 }
 
 .splide__arrow {
-	background: transparent!important;
+	background: transparent !important;
 }
 
 .splide__arrow i {
 	font-size: 5rem;
-	color: var(--primary-color)
+	color: var(--primary-color);
 }
 
 .splide__arrow--next {
-	bottom: -4%!important;
+	bottom: -4% !important;
 }
 
 .splide__arrow--prev {
-	top: -4%!important;
+	top: -4% !important;
 }
 
 .splide__arrow:disabled {
-	visibility:hidden
+	visibility: hidden;
 }
 
 /*==================== COMMON ====================*/
@@ -167,6 +169,56 @@ button {
 	margin-bottom: 2rem;
 }
 
+/*==================== GIOI-THIEU-AREA ====================*/
+#gioi-thieu {
+	background: url(../images/BACKGROUND-GIOI-THIEU.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+
+/*==================== GIOI-THIEU-AREA ====================*/
+
+.header-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav__item {
+	display: inline-block;
+	position: relative;
+}
+
+.nav__item + li {
+	margin-left: 48px;
+}
+
+.nav-link {
+	color: #fff;
+	font-weight: var(--font-bold);
+}
+
+#form-search {
+	position: relative;
+}
+
+#form-search input[type="text"] {
+	padding: 0.4rem 1rem;
+	border-radius: 18px;
+	border: none;
+	outline: none;
+}
+
+#form-search button[type="submit"] {
+	background: transparent;
+	border: none;
+	position: absolute;
+	right: 6%;
+	top: 14%;
+	font-size: 18px;
+	color: var(--primary-color)
+}
 
 /*==================== BAI-DU-THI-AREA ====================*/
 #bai-du-thi {
@@ -176,8 +228,6 @@ button {
 	height: 200rem;
 	position: relative;
 }
-
-
 
 .img-post {
 	width: 50%;
@@ -192,7 +242,7 @@ button {
 .post-content {
 	margin-top: 2rem;
 	font-weight: 400;
-	color: var(--text-color)
+	color: var(--text-color);
 }
 
 #footer {
@@ -200,10 +250,10 @@ button {
 	bottom: 0;
 	padding: 4rem 0;
 	width: 100%;
-	background-color: rgba(0,0,0,0.4);
-	color: var(--text-color-footer)
+	background-color: rgba(0, 0, 0, 0.4);
+	color: var(--text-color-footer);
 }
 
 #footer p {
-	padding: .4rem;
+	padding: 0.4rem;
 }
