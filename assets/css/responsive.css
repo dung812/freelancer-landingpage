@@ -7,7 +7,6 @@
 /* Tablet and mobile: width < 1024px */
 @media (max-width: 64.625em) {
 	.splide__slide img {
-		width: 100%;
 		height: 100%;
 		margin: 0 auto
 	}
@@ -16,11 +15,41 @@
 
 /* Tablet: width >= 740px and width < 1024px */
 @media (min-width: 46.25em) and (max-width: 64.625em) {
-
+	#bai-du-thi {
+		height: 180rem;
+	}
 }
 
 /* Mobile: width < 740px */
 @media (max-width: 46.1875em) {
+	.splide__arrow i {
+		font-size: 2.5rem;
+	}
 
 	
+	#bai-du-thi {
+		height: 100rem;
+	}
+	
+	.img-post {
+		width: 80%;
+		margin-bottom: 2rem;
+	}
+
+	.post-content {
+		font-size: var(--small-font-size);
+		padding: 0 1.4rem;
+	}
+
+	#footer {
+		padding: 2rem 0;
+	}
+
+	#footer img {
+		margin: 0 auto;
+	}
+
+	#footer p {
+		font-size: var(--small-font-size);
+	}
 }
