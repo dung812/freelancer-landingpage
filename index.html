@@ -19,58 +19,76 @@
 
 		<!--==================== CSS RESPONSIVE ====================-->
 		<link rel="stylesheet" href="assets/css/responsive.css" />
-		<style>
-			.splide__slide{
-			  display: inline-flex;  /* used for all slides vertical align center */
-			  vertical-align: middle; /* used for all slides vertical align center */
-			}
-			</style>
-
 
 	</head>
 	<body>
 		<!--==================== Gioi-thieu ====================-->
-		<div id="gioi-thieu">
+		<div class="section" id="gioi-thieu">
 			<!--==================== Header ====================-->
-			<div id="header">
+			<div class="header">
 				<div class="grid wide header-wrapper">
 					<div>
-						<img src="assets/images/logo.png" alt="logo-img">
+						<a href="#">
+							<img src="assets/images/logo.png" class="logo-img" alt="logo-img">
+						</a>
 					</div>
+
 					<div class="navigation__menu">
+						<div class="btn-hide-menu">
+							<i class="uil uil-times"></i>
+						</div>
+
 						<ul class="nav">
-							<li class="nav__item">
-								<a href="#" class="gioi-thieu nav-link">Giới thiệu</a>
+							<li class="nav__item center">
+								<a href="#" class="nav-link active">Giới thiệu</a>
 							</li>
-							<li class="nav__item">
-								<a href="#bai-du-thi" class="bai-du-thi nav-link">Bài dự thi</a>
+							<li class="nav__item center">
+								<a href="#bai-du-thi" class="nav-link">Bài dự thi</a>
 							</li>
-							<li class="nav__item">
+							<li class="nav__item center">
 								<a href="#" class="nav-link">Đăng ký</a>
 							</li>
-							<li class="nav__item">
+							<li class="nav__item center">
 								<a href="#" class="nav-link">Liên hệ</a>
 							</li>
 						</ul>
 					</div>
-					<div>
-						<form id="form-search" action="#">
-							<input type="text"  name="search">
-							<button type="submit"><i class="uil uil-search"></i></button>
-						 </form>
 
+					<div class="search-wrapper">
+						<form id="form-search" action="#">
+							<input type="text" class="input-search" name="search">
+							<button type="submit" class="btn-submit"><i class="uil uil-search"></i></button>
+						 </form>
 					</div>
+
+					<div class="icons-mobile">
+						<div class="btn-show-search">
+							<i class="uil uil-search"></i>
+						</div>
+						<div class="btn-show-menu">
+							<i class="uil uil-bars"></i>
+						</div>
+					</div>
+
 				</div>
 			</div>
 
 			<!--==================== Gioi-thieu-Area ====================-->
-			<div>
+			<div id="gioi-thieu-wrap">
+				<div class="gioi-thieu-content">
+					<div class="gioi-thieu-title">
+						<img src="assets/images/GIOI-THIEU-TITLE.png" alt="">
+					</div>
 
+					<p class="gioi-thieu-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam iusto culpa facilis maiores alias numquam, quisquam dignissimos unde in officia! Vel unde modi placeat. Beatae veritatis unde molestias ratione? Expedita.</p>
+
+					<button class="btn-register">Đăng ký ngay</button>
+				</div>
 			</div>
 		</div>
 
 		<!--==================== Bai-du-thi ====================-->
-		<div id="bai-du-thi">
+		<div class="section" id="bai-du-thi">
 			<div class="grid wide post-wrap">
 				<img class="img-title m-center" src="assets/images/TITLE-VIETNAM.png" alt="">
 				<p class="center post-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatem sequi, obcaecati eum laborum saepe, architecto dignissimos quod esse sapiente necessitatibus commodi. Illum obcaecati beatae incidunt, iusto ipsum cumque dolorum?</p>
@@ -114,11 +132,12 @@
 				 </section>
 			</div>
 
+			<!--==================== FOOTER ====================-->
 			<div id="footer">
 				<div class="grid wide">
 					<div class="row">
 						<div class="col l-3 m-12 c-12">
-							<img src="assets/images/logo.png" alt="">
+							<img src="assets/images/logo.png" class="logo-img" alt="">
 						</div>
 						<div class="center col l-6 m-12 c-12">
 							<p>hello@ntpm.com</p>
@@ -131,8 +150,85 @@
 			</div>
 		</div>
 
+		<div class="modal" id="modal-register">
+			<div class="modal-content">
+            <div class="modal-close icon-close"><i class="uil uil-times-circle"></i></div>
+				<h1 class="title-form-register">Hello</h1>
 
-		<!--==================== FOOTER ====================-->
+            <form action="#" class="form-register" id="form-register" autocomplete="off" style="display: block;">
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="FullName"  name="FullName" required>
+						<label for="FullName" class="floating__label">Họ và tên <span class="required">*</span></label>
+					</div>
+
+					<div class="form-group">
+						<input type="tel" class="form-control" id="FullName"  name="FullName" required>
+						<label for="FullName" class="floating__label">Số điện thoại <span class="required">*</span></label>
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="FullName"  name="FullName" required>
+						<label for="FullName" class="floating__label">Link facebook <span class="required">*</span></label>
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="FullName"  name="FullName" required>
+						<label for="FullName" class="floating__label">Email <span class="required">*</span></label>
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="FullName"  name="FullName" required>
+						<label for="FullName" class="floating__label">Mã hóa đơn <span class="required">*</span></label>
+					</div>
+
+					<div class="image-upload grid">
+						<div class="row">
+							<div class="col l-4 m-12 c-12 p-0">
+								<p class="center cap-invoice">Hãy chụp hình hóa đơn</p>
+							</div>
+							<div class="col l-4 m-12 c-12">
+								<label for="file-input">
+									<img class="m-center" src="assets/images/CAMERA-ICON.png"/>
+								 </label>
+								 <input id="file-input" type="file" />
+							</div>
+							<div class="col l-4 m-12 c-12">
+							</div>
+						</div>
+
+					 </div>
+
+					<div class="form-group center">
+						<button type="submit" class="btn-form-register">Gửi thông tin</button>
+					</div>
+            </form>
+        </div>
+		</div>
+
+		<div class="modal" id="modal-thank">
+			<div class="modal-content">
+				<div class="modal-body center">
+					<img class="img-thanks" src="assets/images/THANKS-FORM.png" alt="">
+					<p class="title-first">Cảm ơn bạn đã đồng hành cùng Premier</p>
+					<p>Link dự thi sẽ được BTC Premier gửi vào email của bạn trong vòng 24h, hãy check mail thường xuyên nhé.</p>
+					<p>Trường hợp không nhận được email từ BTC Premier, bạn hãy kiểm tra thư mục SPAM trong mail. Nếu vẫn chưa nhận được sau 24h, vui lòng liên hệ hotline <span class="hotline">036 374 2960</span> để được hỗ trợ</p>
+					<p class="title-second"><i>Premier mong nhận được bài dự thi sớm từ bạn</i></p>
+				</div>
+
+				<div class="modal-footer grid">
+					<div class="row">
+						<div class="col l-8 m-12 c-12">
+							<p><i>* Mọi thắc mắc vui lòng liên hệ hotine <span class="hotline">036 374 2960</span></i></p>
+						</div>
+						<div class="col l-4 m-12 c-12 right">
+							<button class="btn-form-register btn-close">Đóng</button>
+						</div>
+					</div>
+				</div>
+        </div>
+		</div>
+
 
 
 		<!--==================== SPLIDE CAROUSEL LIBRARY ====================-->

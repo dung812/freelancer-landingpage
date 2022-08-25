@@ -1,16 +1,17 @@
 /*==================== GOOGLE FONTS ====================*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Quicksand:wght@300;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap');
 
 /*==================== VARIABLES CSS ====================*/
 :root {
 	--header-height: 4rem;
 	/*===== Colors ====*/
 	--primary-color: #396dfe;
+	--second-color: #11aab2;
 	--text-color: #6d6a7c;
 	--text-color-footer: #a7a5b4;
 
 	/*========== Font and typography ==========*/
-	--body-font: "Poppins", sans-serif;
+	--body-font: "Asap", sans-serif;
 
 	/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
 	--big-font-size: 2rem;
@@ -44,6 +45,7 @@
 }
 
 /*==================== RESET CSS ====================*/
+
 * {
 	margin: 0;
 	padding: 0;
@@ -68,6 +70,10 @@ body {
 	background-color: #fff;
 	color: var(--text-color);
 	overflow-x: hidden;
+}
+
+body.modal-open {
+	overflow: hidden;
 }
 
 html,
@@ -116,6 +122,8 @@ button {
 .splide__slide {
 	margin: 0 auto;
 	width: 100%;
+	display: inline-flex;  /* used for all slides vertical align center */
+	vertical-align: middle; /* used for all slides vertical align center */
 }
 
 .splide__slide img {
@@ -145,12 +153,11 @@ button {
 }
 
 /*==================== COMMON ====================*/
-.section {
-	padding: 2rem 4rem;
-}
-
 .center {
 	text-align: center;
+}
+.right {
+	text-align: right;
 }
 
 .m-center {
@@ -169,6 +176,226 @@ button {
 	margin-bottom: 2rem;
 }
 
+.p-0 {
+	padding: 0;
+}
+
+.required {
+	color: red;
+}
+
+
+/*==================== MODAL ====================*/
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	background-color: rgba(0,0,0,0.25);
+	opacity: 0;
+	visibility: hidden;
+	padding: 10px 0;
+	transition: .2s;
+}
+
+.modal.is-show {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal.is-show .modal-content {
+	transform: scale(1,1);
+}
+
+.modal-content {
+	position: relative;
+	width: 100%;
+	max-width: 420px;
+	margin: 0 auto;
+	padding: 38px 45px;
+	border-radius: 38px;
+	background-color: #0fa4c2;
+	transform: scale(.5,.5);
+	transition: .2s linear;
+}
+
+.icon-close {
+	position: absolute;
+	top: 8px;
+	right: 24px;
+	font-size: 28px;
+	cursor: pointer;
+}
+
+.title-form-register {
+	letter-spacing: 0.2rem;
+	text-align: center;
+	font-size: 38px;
+	text-transform: uppercase;
+	color: #11365b;
+	margin-bottom: var(--mb-1-5);
+}
+
+.form-group {
+	display: block;
+	position: relative;
+	margin-bottom: var(--mb-1-5);
+}
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	border-radius: 24px;
+	outline: none;
+	border: 1px solid rgb(211, 205, 205);
+}
+.floating__label {
+	position: absolute;
+	top: 10px;
+	left: 16px;
+	color: #cccbcb;
+	font-weight: 600;
+	transform: translate(0,0) scale(1);
+	transition: all 0.2s linear;
+}
+
+
+.form-control:focus ~ label,
+.form-control:valid ~ label {
+	transform: translate(-10px,-25px) scale(0.8);
+}
+
+
+/* .form-group {
+	display: block;
+	position: relative;
+	margin-bottom: var(--mb-1-5);
+}
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	border-radius: 24px;
+	outline: none;
+	border: 1px solid rgb(211, 205, 205);
+}
+.floating__label {
+	position: absolute;
+	top: 10px;
+	left: 16px;
+	color: #cccbcb;
+	font-weight: 600;
+	font-size: 18px;
+	transition: 0.2s ease all;
+} */
+
+
+
+
+.btn-form-register {
+	font-family: var(--body-font);
+	padding: 0.6rem 4rem;
+	font-size: 14px;
+	border-radius: 24px;
+	border: none;
+	outline: none;
+	background-color: #002e5a;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.image-upload {
+	padding: 0 24px;
+	margin-bottom: var(--mb-1);
+}
+
+.cap-invoice {
+	color: black;
+	font-weight: 600;
+}
+
+.image-upload input[type="file"] {
+	display: none;
+}
+
+.image-upload img {
+	width: 64px;
+}
+
+.btn-submit-register:hover {
+	opacity: .8;
+}
+
+
+#modal-thank {
+	z-index: 99999;
+}
+#modal-thank {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: transparent;
+}
+
+#modal-thank .modal-content {
+	background-color: #fff;
+	max-width: 800px;
+	padding: 120px 42px 34px;
+	border-radius: 28px;
+}
+
+#modal-thank .modal-body {
+	background-color: #c1dfea;
+	position: relative;
+	padding: 2rem 2rem 1.5rem;
+	margin-bottom: var(--mb-1-5);
+	border-radius: 32px;
+}
+
+#modal-thank .img-thanks {
+	width: 45%;
+	position: absolute;
+	top: -8%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#modal-thank .modal-body p {
+	margin-top: 1rem;
+	line-height: 1.8;
+	color: #000;
+	font-weight: 600;
+	letter-spacing: 0.8px;
+}
+
+#modal-thank .modal-body .title-first {
+	color: #119db8;
+}
+
+#modal-thank .modal-body .title-second {
+	margin-top: 1rem;
+	line-height: 1.8;
+	color: #29245c;
+	font-weight: bold;
+}
+
+#modal-thank .modal-footer p {
+	color: #4a4275;
+	font-weight: 500;
+}
+
+.hotline {
+	color: #fa921e;
+	text-decoration: underline;
+	font-style: italic;
+	font-weight: bold;
+}
+
+
 /*==================== GIOI-THIEU-AREA ====================*/
 #gioi-thieu {
 	background: url(../images/BACKGROUND-GIOI-THIEU.jpg);
@@ -178,25 +405,47 @@ button {
 	position: relative;
 }
 
-/*==================== GIOI-THIEU-AREA ====================*/
+.logo-img {
+	width: 45%;
+}
+
+.header {
+	padding: 8px 0;
+	transition: all 0.2s linear;
+	position: relative;
+}
 
 .header-wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+
+.header.is-fixed {
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	animation: fade 0.25s forwards 1;
+ }
+ @keyframes fade {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+}
+
 .nav__item {
 	display: inline-block;
 	position: relative;
 }
 
-.nav__item + li {
-	margin-left: 48px;
-}
-
-.nav-link {
-	color: #fff;
-	font-weight: var(--font-bold);
+.navigation__menu {
+	position: relative;
 }
 
 #form-search {
@@ -218,6 +467,41 @@ button {
 	top: 14%;
 	font-size: 18px;
 	color: var(--primary-color)
+}
+
+
+#gioi-thieu-wrap .gioi-thieu-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+
+.gioi-thieu-title {
+	margin-bottom: var(--mb-1);
+}
+.gioi-thieu-title img{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.gioi-thieu-desc {
+	color: #fff;
+	margin-bottom: var(--mb-1-5);
+	line-height: 1.8;
+}
+
+.btn-register {
+	padding: 0.4rem 1.7rem;
+	border-radius: 6px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background-color: var(--second-color);
+	font-family: var(--body-font);
+	font-weight: 400;
+	font-size: 16px;
 }
 
 /*==================== BAI-DU-THI-AREA ====================*/
@@ -243,6 +527,7 @@ button {
 	margin-top: 2rem;
 	font-weight: 400;
 	color: var(--text-color);
+	line-height: 1.8;
 }
 
 #footer {
@@ -256,4 +541,8 @@ button {
 
 #footer p {
 	padding: 0.4rem;
+}
+
+#footer .logo-img {
+	width: 80%;
 }
